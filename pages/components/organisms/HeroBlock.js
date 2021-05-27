@@ -8,6 +8,7 @@ const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${({ theme }) => theme.colors.BlackAccent};
 `
 
 const Headshot = styled.img`
@@ -15,10 +16,11 @@ const Headshot = styled.img`
 
 const Headline = styled.div`
   font-family: Odibee Sans;
-  font-family: ${({ theme }) => theme.fonts.Accent}
+  font-family: ${({ theme }) => theme.fonts.Accent};
   font-weight: 400;
   font-size: 36px;
   line-height: 40px;
+  color: ${({ theme }) => theme.colors.BlueAccent};
 `
 
 const Accent = styled(Headline)`

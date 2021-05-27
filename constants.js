@@ -2,6 +2,8 @@ export const BlackRussian = '#0B0C10'
 export const Bunker = '#1F2833'
 export const LinkWater = '#C5C6C7'
 export const BabyBlue = '#66FCF1'
+export const Viking = '#45B2C9'
+export const Onahau = '#CEEAF1'
 export const BlueChill = '#45A29E'
 
 export const THEME = {
@@ -14,6 +16,8 @@ export const THEME = {
     BlackAccent: Bunker,
     Grey: LinkWater,
     BlueAccent: BabyBlue,
+    TealAccent: Viking,
+    LightBlueAccent: Onahau,
     BlueGreen: BlueChill
   }
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 // Organisms
 import HeroBlock from './components/organisms/HeroBlock'
+import Skills from './components/organisms/Skills'
 
 // Templates
 import Block from './components/templates/Block'
@@ -14,6 +15,9 @@ const PurposeText = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
+  background-color: ${({ theme }) => theme.colors.LightBlueAccent};
+  color: ${({ theme }) => theme.colors.BlueGreen};
+  padding: 0 1em 0 1em;
 `
 
 export default function Home () {
@@ -39,6 +43,9 @@ export default function Home () {
           I am a highly effective communicator
           and I'm looking for a full-time role in software development
         </PurposeText>
+      </Block>
+      <Block>
+        <Skills />
       </Block>
 
     </>
