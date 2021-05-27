@@ -13,15 +13,14 @@ color: ${({ theme }) => theme.colors.BlueGreen};
 const Items = styled.div`
 // max-width: 100%;
 display: flex;
-color: white;
-background-color: red;
+color: ${({ theme }) => theme.colors.BlackAccent};
 flex-wrap: wrap;
 
 `
 const ItemWrapper = styled.div`
+background-color: ${({ theme }) => theme.colors.LightBlueAccent};
 padding: 1em;
-display: flex;
-flex-direction: row;
+border: 1px solid black;
 `
 
 const Skills = () => {
