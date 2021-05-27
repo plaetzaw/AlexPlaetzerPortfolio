@@ -11,14 +11,17 @@ const Type = styled.h1`
 color: ${({ theme }) => theme.colors.BlueGreen};
 `
 const Items = styled.div`
+// max-width: 100%;
 display: flex;
 color: white;
+background-color: red;
+flex-wrap: wrap;
 
 `
 const ItemWrapper = styled.div`
+padding: 1em;
 display: flex;
 flex-direction: row;
-row-wrap: wrap;
 `
 
 const Skills = () => {
@@ -58,9 +61,9 @@ const Skills = () => {
       <Type>Lanuages</Type>
       <Items>{LanguageMap}</Items>
       <Type>Frameworks</Type>
-      {FrameworkMap}
+      <Items>{FrameworkMap}</Items>
       <Type>Technologies</Type>
-      {TechnologyMap}
+      <Items>{TechnologyMap}</Items>
     </SkillsContainer>
   )
 }
