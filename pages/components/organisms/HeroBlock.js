@@ -24,7 +24,9 @@ const Headline = styled.div`
 `
 
 const Accent = styled(Headline)`
-  font-family: Nunito;
+  // font-family: Nunito;
+  font-family: ${({ theme }) => theme.fonts.Base};
+
 `
 const SocialMediaBox = styled.div`
   display: flex;
