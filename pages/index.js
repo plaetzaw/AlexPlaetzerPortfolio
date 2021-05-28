@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import HeroBlock from './components/organisms/HeroBlock'
 import Skills from './components/organisms/Skills'
 import ProjectBlock from './components/organisms/ProjectBlock'
+import ContactBlock from './components/organisms/ContactBlock'
 
 // Templates
 import Block from './components/templates/Block'
@@ -50,6 +51,9 @@ export default function Home () {
       </Block>
       <Block>
         <ProjectBlock />
+      </Block>
+      <Block>
+        <ContactBlock />
       </Block>
 
     </>

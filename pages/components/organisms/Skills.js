@@ -33,6 +33,7 @@ const Skills = () => {
   const Technologies = [
     { id: 1, item: 'PostgreSQL & KnexJS' }, { id: 2, item: 'Storybook' }, { id: 3, item: 'Figma' }, { id: 4, item: 'GraphQL' }, { id: 5, item: 'Git' }, { id: 6, item: 'RestAPIs' }
   ]
+
   const LanguageMap = Languages.map((item) => {
     return (
       <ItemWrapper key={item.id}>

@@ -49,9 +49,9 @@ const ProjectsMap = Projects.map((project) => {
 const ProjectBlock = () => {
   return (
     <Container>
-        <Title>Current Projects</Title>
-        {ProjectsMap}
-      </Container>
+      <Title>Current Projects</Title>
+      {ProjectsMap}
+    </Container>
   )
 }
 

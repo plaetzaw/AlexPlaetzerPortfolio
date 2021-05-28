@@ -24,7 +24,6 @@ const Headline = styled.div`
 `
 
 const Accent = styled(Headline)`
-  // font-family: Nunito;
   font-family: ${({ theme }) => theme.fonts.Base};
 
 `
