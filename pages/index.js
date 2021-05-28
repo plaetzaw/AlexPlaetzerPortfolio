@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // Organisms
 import HeroBlock from './components/organisms/HeroBlock'
-import Skills from './components/organisms/Skills'
+import SkillsBlock from './components/organisms/SkillsBlock'
 import ProjectBlock from './components/organisms/ProjectBlock'
 import ContactBlock from './components/organisms/ContactBlock'
 
@@ -11,14 +11,13 @@ import ContactBlock from './components/organisms/ContactBlock'
 import Block from './components/templates/Block'
 
 const PurposeText = styled.div`
-  font-family: Nunito;
+  font-family: ${({ theme }) => theme.fonts.Base};;
   font-size: 26px;
   line-height: 40px;
   display: flex;
-  align-items: center;
-  text-align: center;
-  background-color: ${({ theme }) => theme.colors.LightBlueAccent};
-  color: ${({ theme }) => theme.colors.BlueGreen};
+  text-align: left;
+  // background-color: ${({ theme }) => theme.colors.LightBlueAccent};
+  // color: ${({ theme }) => theme.colors.BlueGreen};
   padding: 0 1em 0 1em;
 `
 
@@ -47,7 +46,7 @@ export default function Home () {
         </PurposeText>
       </Block>
       <Block>
-        <Skills />
+        <SkillsBlock />
       </Block>
       <Block>
         <ProjectBlock />
@@ -55,7 +54,6 @@ export default function Home () {
       <Block>
         <ContactBlock />
       </Block>
-
     </>
   )
 }

@@ -8,65 +8,61 @@ import ContactTextArea from '../atoms/FormTextArea'
 
 const Container = styled.div`
 // background-color: ${({ theme }) => theme.colors.SPACE_GREY}
-background-color: #343639;
-font-family: Helvetica Neu;
-color: #fcfcfc;
-display: flex;
-flex-wrap: wrap;
-min-height: 100vh
+  background-color: #343639;
+  color: #fcfcfc;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh
 `
-const IntroBlurb = styled.div`
-color: black;
-text-align: center;
-background-color: #BCEEAA;
-flex: 0 1 500px;
-margin: 50px;
-padding: 30px;
-font-size: 1.5rem;
-height: 175px;
-border-radius: 8px;
+const ContactBlurb = styled.div`
+  font-family: ${({ theme }) => theme.fonts.Accent};
+  color: ${({ theme }) => theme.colors.BlueAccent};
+  text-align: center;
+  background-color: ${({ theme }) => theme.colors.BlackAccent};
+  flex: 0 1 500px;
+  margin: 50px;
+  padding: 30px;
+  font-size: 1.5rem;
+  border-radius: 8px;
 `
 
 const ContactForm = styled.form`
-flex: 0 1 525px;
-flex-direction: column;
-background-color: #28292B;
-height: 350px;
-margin-right: 35px;
-margin-left: 35px;
-margin-top: 35px;
-border: 1px dashed #28292A;
-box-sizing: border-box;
-border-radius: 8px;
+  flex: 0 1 525px;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.BlackAccent};
+  margin-right: 35px;
+  margin-left: 35px;
+  margin-top: 35px;
+  border: 1px dashed #28292A;
+  box-sizing: border-box;
+  border-radius: 8px;
 `
 
 const ContactButton = styled.a`
-display:block;
-text-align: center;
-background-color: #76C1F5;
-border-radius: 6px;
-color: ${({ theme }) => theme.colors.regal};
-cursor: pointer;
-  font-family: Open Sans;
+  display: block;
+  text-align: center;
+  background-color: ${({ theme }) => theme.colors.TealAccent};
+  border-radius: 6px;
+  color: ${({ theme }) => theme.colors.regal};
+  cursor: pointer;
   font-size: 1em;
   letter-spacing: .3px;
-width: 175px;
-// margin: 10px;
-margin-left 10px;
-margin-top: 20px;
-max-height: 30px;
-padding: .7em .3em .4em .3em;
-font-size: 18px;
-font-family: Rockwell;
+  width: 175px;
+  margin-left 10px;
+  margin-top: 20px;
+  max-height: 30px;
+  padding: .7em .3em .4em .3em;
+  font-size: 18px;
+  font-family: Rockwell;
 `
 
 const SuccessHeader = styled.h1`
-color: #24A5FF;
-text-align: center;
+  color: #24A5FF;
+  text-align: center;
 `
 const SuccessText = styled.div`
-text-align: center;
-font-size: 20px;
+  text-align: center;
+  font-size: 20px;
 `
 
 const Index = () => {
@@ -78,25 +74,25 @@ const Index = () => {
 
   const NAME_PLACEHOLDER = 'John Doe'
   const EMAIL_PLACEHOLDER = 'myemail@company.com'
-  const HANDLE_PLACEHOLDER = 'Enter the target github handle (@user)'
+  const MESSAGE_PLACEHOLDER = 'Enter your message'
 
   //   const NAME_ERROR_MESSAGE = 'Please enter a valid name'
   //   const EMAIL_ERROR_MESSAGE = 'Please enter a valid email'
-  //   const HANDLE_ERROR_MESSAGE = 'Please enter a valid handle'
+  //   const Message_ERROR_MESSAGE = 'Please enter a valid Message'
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [handle, setHandle] = useState('')
+  const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [invalidName, setInValidName] = useState(false)
   const [invalidEmail, setInValidEmail] = useState(false)
-  const [invalidHandle, setInvalidHandle] = useState(false)
+  const [invalidMessage, setInvalidMessage] = useState(false)
 
   const onClick = async (e) => {
     e.preventDefault()
     let nameError = false
     let emailError = false
-    let handleError = false
+    let messageError = false
     /// Checking for validity of each field
     if (name.length <= 0) {
       nameError = true
@@ -106,18 +102,18 @@ const Index = () => {
       emailError = true
     }
 
-    if (handle.length <= 0) {
-      handleError = true
+    if (message.length <= 0) {
+      messageError = true
     }
     // Helpful Error Handling
-    // console.log(nameError, '&&', emailError, '&&', handleError)
+    // console.log(nameError, '&&', emailError, '&&', MessageError)
     // console.log(`Rendering Form -- (withErrors: ${showErrors}) and (invalidName:${invalidName})`)
     // console.log(`Rendering Form -- (withErrors: ${showErrors}) and (invalidEmail:${invalidEmail})`)
-    // console.log(`Rendering Form -- (withErrors: ${showErrors}) and (invalidHandle:${invalidHandle})`)
+    // console.log(`Rendering Form -- (withErrors: ${showErrors}) and (invalidMessage:${invalidMessage})`)
 
     // Checking to see if the input values are valid, if so
     // it will initiate the fetch request
-    if (nameError === false && emailError === false && handleError === false) {
+    if (nameError === false && emailError === false && messageError === false) {
       try {
         await window.fetch('/', {
           method: 'POST',
@@ -126,12 +122,12 @@ const Index = () => {
             'form-name': 'getting-started-leads',
             name: name,
             email: email,
-            handle: handle
+            Message: message
           })
         })
         // console.log('awaited fetch result:', result)
         setSubmitted(true)
-        console.log(name, email, handle, 'information submitted?', submitted)
+        console.log(name, email, message, 'information submitted?', submitted)
       } catch (e) {
         console.log(e)
       }
@@ -139,7 +135,7 @@ const Index = () => {
     } else {
       setInValidName(nameError)
       setInValidEmail(emailError)
-      setInvalidHandle(handleError)
+      setInvalidMessage(messageError)
     }
   }
 
@@ -171,14 +167,14 @@ const Index = () => {
             onChange={(e) => { setEmail(e.target.value) }}
             invalidField={invalidEmail}
           />
-          <ContactLabel invalidField={invalidHandle}>Github Individual/Organization Handle</ContactLabel>
+          <ContactLabel invalidField={invalidMessage}>MESSAGE</ContactLabel>
           <ContactTextArea
             type='text'
             name='message'
-            value={handle}
-            placeholder={HANDLE_PLACEHOLDER}
-            onChange={(e) => { setHandle(e.target.value) }}
-            invalidField={invalidHandle}
+            value={message}
+            placeholder={MESSAGE_PLACEHOLDER}
+            onChange={(e) => { setMessage(e.target.value) }}
+            invalidField={invalidMessage}
 
           />
           <ContactButton
@@ -200,9 +196,9 @@ const Index = () => {
   return (
     <>
       <Container>
-        <IntroBlurb>
+        <ContactBlurb>
           Want to work with me?
-        </IntroBlurb>
+        </ContactBlurb>
         {contactForm}
       </Container>
     </>
