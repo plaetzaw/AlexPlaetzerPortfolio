@@ -41,12 +41,14 @@ const SocialMediaBox = styled.div`
 const HeroBlock = () => {
   return (
     <HeroContainer>
-      <Headshot src='/Headshot.png' />
+      <Headshot src='/AlexHeadshot.png' />
       <Headline>Hi I'm Alex Plaetzer</Headline>
       <Accent>and</Accent>
       <Headline>I'm a full-stack developer</Headline>
       <SocialMediaBox>
-        <LinkedIn /> <GitHub /> <Medium />
+        <a href='https://www.linkedin.com/in/alexplaetzer/' target='_blank' rel='noreferrer'><LinkedIn /></a>
+        <a href='https://github.com/plaetzaw' target='_blank' rel='noreferrer'><GitHub /></a>
+        <a href='https://medium.com/@plaetzaw' target='_blank' rel='noreferrer'><Medium /></a>
       </SocialMediaBox>
     </HeroContainer>
   )
