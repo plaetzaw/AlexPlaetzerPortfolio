@@ -33,7 +33,7 @@ const SocialMediaBox = styled.div`
   align-items: center;
   width: 180px;
   height: 60px;
-  background: linear-gradient(180deg, #DBFF00 0%, rgba(255, 255, 255, 0) 100%), #031CFF;
+  background-color: ${({ theme }) => theme.colors.BlueGreen};
   border: 1px solid #000000;
   margin: 1em 0 1em 0;
 `

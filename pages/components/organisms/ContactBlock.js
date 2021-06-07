@@ -7,22 +7,22 @@ import ContactInput from '../atoms/FormInput'
 import ContactTextArea from '../atoms/FormTextArea'
 
 const Container = styled.div`
-// background-color: ${({ theme }) => theme.colors.SPACE_GREY}
-  background-color: #343639;
+  // background-color: #343639;
+  background-color: ${({ theme }) => theme.colors.BlackAccent};
   color: #fcfcfc;
   display: flex;
   flex-wrap: wrap;
-  min-height: 100vh
+  // min-height: 100vh;
 `
 const ContactBlurb = styled.div`
   font-family: ${({ theme }) => theme.fonts.Accent};
   color: ${({ theme }) => theme.colors.BlueAccent};
   text-align: center;
   background-color: ${({ theme }) => theme.colors.BlackAccent};
-  flex: 0 1 500px;
+  flex: 0 1 450px;
   margin: 50px;
   padding: 30px;
-  font-size: 1.5rem;
+  font-size: 3rem;
   border-radius: 8px;
 `
 
@@ -188,7 +188,7 @@ const Index = () => {
       <>
         <ContactForm>
           <SuccessHeader>Success!</SuccessHeader>
-          <SuccessText>Thank you for your interest in gitBabel! Your message has been submitted and we will get back to you soon!</SuccessText>
+          <SuccessText>Thank you for reaching out! Your message has been submitted and I will get back to you as soon as I can!</SuccessText>
         </ContactForm>
       </>
       )
