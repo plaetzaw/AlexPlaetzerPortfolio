@@ -119,7 +119,7 @@ const Index = () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: encode({
-            'form-name': 'getting-started-leads',
+            'form-name': 'contact-me',
             name: name,
             email: email,
             Message: message

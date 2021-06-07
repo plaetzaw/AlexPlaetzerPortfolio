@@ -18,7 +18,7 @@ const Logo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
+  // padding: 1em;
 `
 
 const Text = styled.div`

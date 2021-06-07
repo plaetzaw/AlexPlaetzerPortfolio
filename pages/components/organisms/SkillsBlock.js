@@ -5,6 +5,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 background-color: ${({ theme }) => theme.colors.BlackAccent};
+padding: 0 0 1.5em 0;
 `
 
 const Type = styled.h1`
